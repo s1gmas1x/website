@@ -13,7 +13,7 @@ class GraphicController extends Controller
      */
     public function index()
     {
-        return Graphic::orderBy('created_at', 'DESC')->get();
+        return Graphic::orderBy('created_at', 'DESC')->paginate(5);
     }
 
     /**

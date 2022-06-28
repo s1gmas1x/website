@@ -39,7 +39,9 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::delete('/graphics/{id}', [GraphicController::class, 'destroy'])->name('graphics.destroy');
     Route::delete('/messages/{id}', [MessageController::class, 'destroy'])->name('messages.destroy');
     Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
-
+    //Protected messages routes
+    Route::get('/messages',[MessageController::class, 'index'])->name('messages.index');
+    Route::get('/messages/{id}', [MessageController::class, 'show'])->name('messages.show');
 
 });
 
@@ -50,12 +52,10 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 
 //Public index routes
 Route::get('/graphics',[GraphicController::class, 'index'])->name('graphics.index');
-Route::get('/messages',[MessageController::class, 'index'])->name('messages.index');
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 //Public show single item routes
 Route::get('/graphics/{id}', [GraphicController::class, 'show'])->name('graphics.show');
-Route::get('/messages/{id}', [MessageController::class, 'show'])->name('messages.show');
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 
 //Public create message route

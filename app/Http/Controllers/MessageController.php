@@ -14,7 +14,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        return Message::orderBy('created_at', 'DESC')->get();
+        return Message::orderBy('created_at', 'DESC')->paginate(5);
     }
 
     /**

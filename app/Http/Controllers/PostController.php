@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::orderBy('created_at', 'DESC')->get();
+        return Post::orderBy('created_at', 'DESC')->paginate(5);
     }
 
     /**

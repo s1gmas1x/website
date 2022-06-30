@@ -11,12 +11,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap" rel="stylesheet">
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main.css" />
+        
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     </head>
     
     <body class="is-preload">
+    
+        
     
         <!-- Sidebar -->
         <section id="sidebar">
@@ -36,7 +40,9 @@
         </section>
     
         <!-- Wrapper -->
+        
         <div id="wrapper">
+            <main id="app">
             <!-- Intro -->
     
             <section id="intro" class="wrapper style1 fullscreen fade-up">
@@ -198,48 +204,22 @@
                         </section>
                     </div>
                 </div>
+                
                 <!-- Four -->
-                <section id="four" class="wrapper style3 spotlights">
-                    <section>
-                        <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-                        <div class="content">
-                            <div class="inner">
-                                <h2>Sed ipsum dolor</h2>
-                                <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-                                <ul class="actions">
-                                    <li><a href="generic.html" class="button">Learn more</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-                        <div class="content">
-                            <div class="inner">
-                                <h2>Feugiat consequat</h2>
-                                <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-                                <ul class="actions">
-                                    <li><a href="generic.html" class="button">Learn more</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-                        <div class="content">
-                            <div class="inner">
-                                <h2>Ultricies aliquam</h2>
-                                <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-                                <ul class="actions">
-                                    <li><a href="generic.html" class="button">Learn more</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
+                
+                <section id="four">
+                    
+                
+                    <articles></articles>
+                    
+                    
+                
+                    
+                    
                 </section>
-    
-            </section>
-    
+                
+            
+            </main>
         </div>
     
         <!-- Footer -->
@@ -256,6 +236,7 @@
         </footer>
     
         <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}" ></script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.scrollex.min.js"></script>
         <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -263,6 +244,7 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+    
     
     </body>
     

@@ -212,7 +212,7 @@
                 
                     <articles></articles>
                     
-                    
+                    <login-form></login-form>
                 
                     
                     

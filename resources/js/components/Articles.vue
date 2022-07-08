@@ -16,8 +16,8 @@
                 </div>
             </div>
         </section>
-                        <div class="inner py-2 pb-4 m-0">
-                        <ul class="actions my-0">
+                        <div class="inner py-2 pb-2 m-0">
+                        <ul class="actions my-0 d-flex">
                             <li class=""><a href="" @click.prevent="fetchArticles(pagination.prev_page_url)"
                                     v-bind:class="[{disabled: !pagination.prev_page_url}]" class="button small primary ">Previous</a></li>
                             <li><small>Page {{pagination.current_page}} of {{pagination.last_page}}</small></li>

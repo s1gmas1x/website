@@ -43,9 +43,10 @@ class UserController extends Controller
 
        //Check password
        if(!$user || !Hash::check($fields['password'], $user->password)){
-            return response([
+            $response = [
                 'message' => 'Your credentials do not match.'
-            ], 401);
+            ];
+            return response($response, 401);
        }
 
        $token = $user->createToken('token')->plainTextToken;

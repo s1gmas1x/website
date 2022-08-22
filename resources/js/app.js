@@ -7,12 +7,16 @@
 require('./bootstrap');
 
 import { createApp } from 'vue'
+
 import Articles from './components/Articles.vue'
-import loginForm from './components/loginForm.vue'
+import LoginForm from './components/LoginForm.vue'
+import AppButton from './components/AppButton.vue'
 
 const app = createApp({})
+app.store
 app.component('articles', Articles)
-app.component('login-form', loginForm)
+app.component('login-form', LoginForm)
+app.component('app-button', AppButton)
 app.mount('#app')
 
 //window.Vue = require('vue').default;

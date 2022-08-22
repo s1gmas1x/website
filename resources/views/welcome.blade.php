@@ -150,7 +150,7 @@
                     <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
                     <div class="split style1">
                         <section>
-                            <form method="post" action="#">
+                            <form method="post" action="api/messages">
                                 <div class="fields">
                                     <div class="field half">
                                         <label for="name">Name</label>
@@ -158,7 +158,7 @@
                                     </div>
                                     <div class="field half">
                                         <label for="email">Email</label>
-                                        <input type="text" name="email" id="email" />
+                                        <input type="text" name="email" id="message-email" />
                                     </div>
                                     <div class="field">
                                         <label for="subject">Subject</label>

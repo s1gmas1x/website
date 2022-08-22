@@ -1,10 +1,10 @@
 <?php
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\GraphicController;
-use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\GraphicController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,23 +23,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['middleware'=>['auth:sanctum']], function(){
     
-    //Protected logout route
+//Protected logout route
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     
-    //Protected create routes
+//Protected create routes
     Route::post('/graphics', [GraphicController::class, 'store'])->name('graphics.store');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
     
-    //Protected update routes
+//Protected update routes
     Route::put('/graphics/{id}', [GraphicController::class, 'update'])->name('graphics.update');
     Route::put('/messages/{id}', [MessageController::class, 'update'])->name('messages.update');
     Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
     
-    //Protected delete routes
+//Protected delete routes
     Route::delete('/graphics/{id}', [GraphicController::class, 'destroy'])->name('graphics.destroy');
     Route::delete('/messages/{id}', [MessageController::class, 'destroy'])->name('messages.destroy');
     Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
-    //Protected messages routes
+
+//Protected messages routes
     Route::get('/messages',[MessageController::class, 'index'])->name('messages.index');
     Route::get('/messages/{id}', [MessageController::class, 'show'])->name('messages.show');
 
@@ -47,6 +48,7 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
 
 //Pubic register route
 Route::post('/register', [UserController::class, 'register'])->name('register');
+
 //Public login route
 Route::post('/login', [UserController::class, 'login'])->name('login');
 
@@ -60,4 +62,3 @@ Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 
 //Public create message route
 Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
-

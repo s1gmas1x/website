@@ -30,7 +30,7 @@ return [
 
     'allowed_methods' => ['GET, POST, PATCH, PUT, DELETE, OPTIONS'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['ckohl.com'],
 
     'allowed_origins_patterns' => [],
 

@@ -25,15 +25,15 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-            Message::factory(50)->create();
-            User::factory(100)->create()->each(function($user){
-                Post::factory(rand(1,3))->create([
-                    'user_id' => $user->id
-                ]);
-                Graphic::factory(rand(1,3))->create([
-                    'user_id' => $user->id
-                ]);
+            // Message::factory(50)->create();
+            // User::factory(100)->create()->each(function($user){
+            //     Post::factory(rand(1,3))->create([
+            //         'user_id' => $user->id
+            //     ]);
+            //     Graphic::factory(rand(1,3))->create([
+            //         'user_id' => $user->id
+            //     ]);
                 
-            });
+            // });
     }
 }

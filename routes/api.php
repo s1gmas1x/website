@@ -29,11 +29,11 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
 //Protected create routes
     Route::post('/graphics', [GraphicController::class, 'store'])->name('graphics.store');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-    
+    Route::post('/register', [UserController::class, 'register'])->name('register');
 //Protected update routes
-    Route::put('/graphics/{id}', [GraphicController::class, 'update'])->name('graphics.update');
-    Route::put('/messages/{id}', [MessageController::class, 'update'])->name('messages.update');
-    Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+    Route::patch('/graphics/{id}', [GraphicController::class, 'update'])->name('graphics.update');
+    Route::patch('/messages/{id}', [MessageController::class, 'update'])->name('messages.update');
+    Route::patch('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
     
 //Protected delete routes
     Route::delete('/graphics/{id}', [GraphicController::class, 'destroy'])->name('graphics.destroy');
@@ -46,8 +46,7 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
 
 });
 
-//Pubic register route
-Route::post('/register', [UserController::class, 'register'])->name('register');
+
 
 //Public login route
 Route::post('/login', [UserController::class, 'login'])->name('login');

@@ -28,7 +28,7 @@ return [
   'email/verification-notification',
 ],
 
-    'allowed_methods' => ['*'],
+    'allowed_methods' => ['GET, POST, PATCH, PUT, DELETE, OPTIONS'],
 
     'allowed_origins' => ['*'],
 

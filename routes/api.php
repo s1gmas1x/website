@@ -5,7 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GraphicController;
 use App\Http\Controllers\MessageController;
-
+use App\Http\Controllers\Api\PageVisitController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -61,3 +61,6 @@ Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 
 //Public create message route
 Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
+
+// Public analytics route
+Route::post('/page-visits', [PageVisitController::class, 'trackEvent'])->name('page-visits.trackEvent');

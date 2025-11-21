@@ -30,4 +30,19 @@ class PageVisitController extends Controller
             'visit_id' => $visit->id,
         ]);
     }
+
+    public function index(Request $request)
+{
+    // Optionally, you can add filters (by date, page, event_type)
+    $visits = PageVisit::query()
+        ->when($request->page, fn($q) => $q->where('page', $request->page))
+        ->when($request->event_type, fn($q) => $q->where('event_type', $request->event_type))
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return response()->json($visits);
 }
+
+}
+
+

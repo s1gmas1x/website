@@ -17,7 +17,7 @@ class PageVisitController extends Controller
 
         $visit = PageVisit::create([
             'page'        => $request->path(),
-            'ip'          => $request->ip(),
+            'ip'          => $request->header('CF-Connecting-IP', $request->ip()),
             'user_agent'  => $request->userAgent(),
             'referrer'    => $request->headers->get('referer'),
             'session_id'  => session()->getId(),

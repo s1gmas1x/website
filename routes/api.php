@@ -52,6 +52,8 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get('/page-visits/ip/{ip}', [PageVisitController::class, 'activityForIp'])->name('page-visits.activity-for-ip');
     Route::get('/page-visits/by-label', [PageVisitController::class, 'visitsByLabel'])
     ->name('page-visits.by-label');
+    Route::get('/page-visits/label/{label}', [PageVisitController::class, 'activityForLabel'])
+    ->name('page-visits.activity-for-label');
 });
 
 

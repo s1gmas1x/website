@@ -108,6 +108,17 @@ public function visitsByLabel()
 
     return response()->json($data);
 }
+/**
+ * Activity feed for a single event label
+ */
+public function activityForLabel($label)
+{
+    $visits = PageVisit::where('event_label', $label)
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return response()->json($visits);
+}
 }
 
 

@@ -95,6 +95,19 @@ class PageVisitController extends Controller
             'events_today'   => PageVisit::whereDate('created_at', now()->toDateString())->count(),
         ]);
     }
+    /**
+ * GROUP visits by event_label
+ */
+public function visitsByLabel()
+{
+    $data = PageVisit::selectRaw('event_label, COUNT(*) as total')
+        ->whereNotNull('event_label')
+        ->groupBy('event_label')
+        ->orderByDesc('total')
+        ->get();
+
+    return response()->json($data);
+}
 }
 
 

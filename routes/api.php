@@ -44,9 +44,12 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get('/messages',[MessageController::class, 'index'])->name('messages.index');
     Route::get('/messages/{id}', [MessageController::class, 'show'])->name('messages.show');
 
-// Protected page visits GET route
+// Protected page visits GET routes
     Route::get('/page-visits', [PageVisitController::class, 'index'])->name('page-visits.index');
-
+    Route::get('/page-visits/stats', [PageVisitController::class, 'stats'])->name('page-visits.stats');
+    Route::get('/page-visits/by-ip', [PageVisitController::class, 'visitsByIp'])->name('page-visits.by-ip');
+    Route::get('/page-visits/by-page', [PageVisitController::class, 'visitsByPage'])->name('page-visits.by-page');
+    Route::get('/page-visits/ip/{ip}', [PageVisitController::class, 'activityForIp'])->name('page-visits.activity-for-ip');
 });
 
 
